@@ -1,23 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-
-          
-    
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>La multi ani, Inuta!</title>
-  <link rel="stylesheet" href="/style.css">
 
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Pacifico", cursive;
+      text-align: center;
+      color: #ffffff;
+      background: #4e54c8;
+      background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);
+      background: linear-gradient(to right, #8f94fb, #4e54c8);
+      background-image: url("https://usagif.com/wp-content/uploads/gif/confetti-22.gif");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .scroll {
+      overflow-y: scroll;
+    }
+
+    .sound-btn {
+      background: linear-gradient(135deg, #fdd835 0%, #fbc02d 100%);
+      border: none;
+      border-radius: 25px;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 20px 40px;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+      margin: 15px;
+      box-shadow: 0 4px 15px rgba(253, 216, 53, 0.4);
+      transform: translateY(0);
+    }
+
+    .sound-btn:hover {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ff4000 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 64, 0, 0.5);
+    }
+
+    .container {
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 72px;
+      margin-bottom: 50px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+      animation: pulse 2s infinite;
+    }
+
+    .birthday-text-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 50px;
+      height: 180px;
+      background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+      border-radius: 20px;
+      border: 4px solid #fdd835;
+    }
+
+    .birthday-text {
+      font-size: 56px;
+      margin: 0;
+      padding: 0;
+      color: #4e54c8;
+      text-shadow: 3px 3px 6px rgba(78, 84, 200, 0.3);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Gallery section */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      margin: 0;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      transition: all 0.4s ease-in-out;
+      border: 5px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08) rotate(2deg);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+      border-color: #fdd835;
+    }
+
+    #confetti-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+    }
+
+    /* Video container styling */
+    .video-container {
+      margin: 60px auto;
+      max-width: 900px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .video-container h2 {
+      font-size: 42px;
+      margin-bottom: 30px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-container video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+    }
+  </style>
 </head>
 <body class="scroll">
 
-    <canvas id="confetti-canvas"></canvas>
-
+  <canvas id="confetti-canvas"></canvas>
   <div id="particles-js"></div>
   
   <div class="container">
@@ -26,7 +173,6 @@
       <p class="birthday-text" data-aos="fade-up">20 years!</p>
     </div>
 
-    
     <div class="gallery">
       <img data-aos="fade-up" src="/images/1.jpg" alt="Photo 1">
       <img data-aos="fade-up" src="/images/2.jpg" alt="Photo 2">
@@ -35,81 +181,70 @@
       <img data-aos="fade-up" src="/images/5.jpg" alt="Photo 5">
     </div>
 
-  <div>
-    <button id="sound-btn1" class="sound-btn">С днем рождения, Катюша!</button>
-    <button id="sound-btn2" class="sound-btn">Счастья, радости, улыбок!</button>
-    <button id="sound-btn3" class="sound-btn">Пусть все мечты сбываются,</button>
-    <button id="sound-btn4" class="sound-btn">A жизнь будет наполнена любовью и яркими моментами. </button>
-    <button id="sound-btn5" class="sound-btn">Happy birthday!</button>
-</div>
+    <div>
+      <button id="sound-btn1" class="sound-btn">С днем рождения, Катюша!</button>
+      <button id="sound-btn2" class="sound-btn">Счастья, радости, улыбок!</button>
+      <button id="sound-btn3" class="sound-btn">Пусть все мечты сбываются,</button>
+      <button id="sound-btn4" class="sound-btn">A жизнь будет наполнена любовью и яркими моментами.</button>
+      <button id="sound-btn5" class="sound-btn">Happy birthday!</button>
+    </div>
   </div>
-  
-  
 
+  <!-- JS pentru efecte -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/confetti-js/dist/index.min.js"></script>
-  
 
-<script>
-    window.onload = function() {
-  var confettiSettings = {
-    target: 'confetti-canvas',
-    max: 200,
-    size: 2,
-    animate: true,
-    props: ['square', 'line', 'triangle', 'circle'],
-    colors: [[255, 0, 0], [0, 255, 0], [0, 0, 255], [255, 255, 0], [255, 0, 255], [0, 255, 255]]
-  };
-  var confetti = new ConfettiGenerator(confettiSettings);
-  confetti.render();
-
-  var backgroundMusic = new Audio('/audio/catea.mp3');
-  backgroundMusic.loop = true;
-  backgroundMusic.volume = 0.5;
-  
-  // Start playing immediately
-  var playPromise = backgroundMusic.play();
-  
-  if (playPromise !== undefined) {
-    playPromise.catch(function(error) {
-      // Autoplay was prevented, try unmuting on first interaction
-      document.addEventListener('click', function() {
-        backgroundMusic.play();
-      }, { once: true });
-    });
-  }
-
-  var video = document.getElementById('video');
-  if (video) {
-    video.addEventListener('play', function() {
-      backgroundMusic.pause();
-    });
-    
-    video.addEventListener('pause', function() {
-      backgroundMusic.play();
-    });
-    
-    video.addEventListener('ended', function() {
-      backgroundMusic.play();
-    });
-  }
-};
-
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    // Initializeaza AOS
-    AOS.init();
+    window.onload = function() {
+      var confettiSettings = {
+        target: 'confetti-canvas',
+        max: 200,
+        size: 2,
+        animate: true,
+        props: ['square', 'line', 'triangle', 'circle'],
+        colors: [[255,0,0],[0,255,0],[0,0,255],[255,255,0],[255,0,255],[0,255,255]]
+      };
+      var confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
+
+      var backgroundMusic = new Audio('/audio/catea.mp3');
+      backgroundMusic.loop = true;
+      backgroundMusic.volume = 0.5;
+      
+      var playPromise = backgroundMusic.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function() {
+          document.addEventListener('click', function() {
+            backgroundMusic.play();
+          }, { once: true });
+        });
+      }
+
+      var video = document.getElementById('video');
+      if (video) {
+        video.addEventListener('play', function() {
+          backgroundMusic.pause();
+        });
+        video.addEventListener('pause', function() {
+          backgroundMusic.play();
+        });
+        video.addEventListener('ended', function() {
+          backgroundMusic.play();
+        });
+      }
+    };
   </script>
 
-<div class="video-container">
-  <h2 data-aos="fade-up">Special Birthday Message</h2>
-  <video id="video" controls>
-    <source src="/video/Katy Perry - Birthday (Lyric Video) - KatyPerryVEVO (720p, h264).mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <div class="video-container">
+    <h2 data-aos="fade-up">Special Birthday Message</h2>
+    <video id="video" controls>
+      <source src="/video/Katy Perry - Birthday (Lyric Video) - KatyPerryVEVO (720p, h264).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
 </body>
 </html>
